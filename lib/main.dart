@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:hematkuy/beranda.dart';
+import 'package:hematkuy/perkenalan.dart';
 import 'data.dart';
 import 'package:hematkuy/profil.dart';
 import 'riwayat.dart';
@@ -9,7 +10,7 @@ import 'target.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: MyApp(),
+      home: perkenalan(),
     ),
   );
 }
