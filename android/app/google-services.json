@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889649421833",
+    "project_id": "hematkuy-4f23a",
+    "storage_bucket": "hematkuy-4f23a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889649421833:android:6344d19c47e91b1322a2d8",
+        "android_client_info": {
+          "package_name": "com.nalsal.hematkuy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889649421833-qaam42766appklr64r36jhfpcq9hhr9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGTnMmgGnBW1FdwIsxL4ZXJQFthqIj7f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889649421833-qaam42766appklr64r36jhfpcq9hhr9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

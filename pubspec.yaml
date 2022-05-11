@@ -27,19 +27,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flutter:
-    sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  bubble_tab_indicator: "^0.1.6"
   cupertino_icons: ^1.0.2
   curved_navigation_bar: ^1.0.3
+  firebase_auth: ^3.3.17
+  flutter:
+    sdk: flutter
   introduction_screen: ^3.0.1
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.2
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.9.2
 
 flutter_icons:
   android: true
@@ -59,7 +59,6 @@ flutter_native_splash:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -71,13 +70,10 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
@@ -98,30 +94,25 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/slide1.png
-    - assets/slide2.png
-    - assets/slide3.png
-    - assets/slide4.png
-    - assets/slide5.png
-    - assets/start.png
+    - assets/
   fonts:
     - family: Ubuntu
       fonts:
-      -asset:assets/Ubuntu-Bold.ttf
-        weight: bold
-      -asset:assets/Ubuntu-BoldItalic.ttf
-        weight: bold
-        style: italic
-      -asset:assets/Ubuntu-Italic.ttf
-        style: italic
-      -asset:assets/Ubuntu-Light.ttf
-        weight: light
-      -asset:assets/Ubuntu-LightItalic.ttf
-        weight: light
-        style: italic
-      -asset:assets/Ubuntu-Medium.ttf
-        weight: Medium
-      -asset:assets/Ubuntu-MediumItalic.ttf
-        weight: medium
-        style: italic
-      -asset:assets/Ubuntu-Regular.ttf
+        - asset: assets/fonts/Ubuntu-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Ubuntu-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Ubuntu-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Ubuntu-Light.ttf
+          weight: 200
+        - asset: assets/fonts/Ubuntu-LightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Ubuntu-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Ubuntu-MediumItalic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/Ubuntu-Regular.ttf

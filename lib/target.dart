@@ -11,6 +11,14 @@ class target extends StatefulWidget {
 class _targetState extends State<target> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        backgroundColor: Color.fromARGB(255, 0, 87, 217),
+        child: const Icon(Icons.edit_rounded),
+      ),
+    );
   }
 }

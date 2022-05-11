@@ -1,41 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:hematkuy/daftar.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'beranda.dart';
 import 'button_widget.dart';
 
-class perkenalan extends StatelessWidget {
+class perkenalan extends StatefulWidget {
+  @override
+  State<perkenalan> createState() => _perkenalanState();
+}
+
+class _perkenalanState extends State<perkenalan> {
   @override
   Widget build(BuildContext contexgit) => SafeArea(
         child: IntroductionScreen(
           pages: [
             PageViewModel(
-              title: 'Selamat datang di HematKuy !',
-              body: 'Kelola keuanganmu dengan terstruktur dan tanpa ribet !',
+              title: 'Selamat Datang di HematKuy !',
+              body:
+                  'HematKuy akan membantumu dalam mengelola uang dengan mudah !',
               image: buildImage('assets/slide1.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Catat Pengeluaranmu',
-              body: 'Available right at your fingerprints',
+              title: 'Catat Pemasukkan dan Pengeluaranmu',
+              body: 'Mencatat kini lebih seru dan mudah dalam satu aplikasi',
               image: buildImage('assets/slide2.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Analisa Keuanganmu',
-              body: 'For enhanced reading experience',
+              body:
+                  'Kamu bisa memantau dan mengontrol rekam jejak keuanganmu semudah menggerakkan jari',
               image: buildImage('assets/slide3.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Buat Tujuanmu',
-              body: 'Start your journey',
+              body:
+                  'Dengan target, kamu akan memiliki tujuan keuangan yang jelas dan terarah',
               image: buildImage('assets/slide4.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Mulai HematKuy !',
               body:
-                  '"Karena setiap rupiah perlu dipertanggungjawabkan" ~ Pak Willy"',
+                  '"Karena setiap rupiah perlu dipertanggungjawabkan" ~ Pak Willy',
               image: buildImage('assets/slide5.png'),
               decoration: getPageDecoration(),
             ),
@@ -44,11 +54,10 @@ class perkenalan extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 0, 87, 217))),
-          onDone: () => () {},
+          onDone: () => onDone(context),
           showSkipButton: true,
           skip: Text('Lewati',
               style: TextStyle(color: Color.fromARGB(255, 0, 87, 217))),
-          onSkip: () => () {},
           next: Icon(
             Icons.arrow_forward_rounded,
             color: Color.fromARGB(255, 0, 87, 217),
@@ -64,12 +73,16 @@ class perkenalan extends StatelessWidget {
         ),
       );
 
-  void goToHome(context) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => beranda()),
-      );
+  void onDone(context) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('ON_BOARDING', false);
+    print(context);
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => const daftar()));
+  }
 
   Widget buildImage(String path) =>
-      Center(child: Image.asset(path, width: 350));
+      Center(child: Image.asset(path, width: 250));
 
   DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color.fromARGB(255, 141, 141, 141),
@@ -89,6 +102,7 @@ class perkenalan extends StatelessWidget {
         bodyTextStyle:
             TextStyle(fontSize: 20, color: Color.fromARGB(255, 124, 129, 143)),
         imagePadding: EdgeInsets.all(24),
+        imageFlex: 1,
         pageColor: Colors.white,
       );
 }
